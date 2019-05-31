@@ -141,7 +141,7 @@ class CapsNet(model.BaseModel):
                 capsule_embedding=capsule_embedding,
                 layer_sizes=[512, 1024],
                 num_pixels=num_pixels,
-                reuse=(i > 0),
+                reuse= True if i > 0 else False,
                 image=image,
                 balance_factor=0.0005))
 

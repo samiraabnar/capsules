@@ -412,6 +412,8 @@ def reconstruction(capsule_mask, num_atoms, capsule_embedding, layer_sizes,
   Returns:
     The reconstruction images of shape [batch_size, num_pixels].
   """
+  tf.logging.info("reuse")
+  tf.logging.info(reuse)
   first_layer_size, second_layer_size = layer_sizes
   capsule_mask_3d = tf.expand_dims(capsule_mask, -1)
   atom_mask = tf.tile(capsule_mask_3d, [1, 1, num_atoms])
